@@ -1,9 +1,19 @@
 import { useState } from "react";
+import CalulatorBMI from "./components/calculator";
+import MyNavbar from "./components/Navbar";
+import Footer from "./components/footer";
+import Header from "./components/header";
+import LoginForm from "./components/loginform";
 function App() {
   const [obtMarks, setObtMarks] = useState(0);
   const [totalMarks, setTotalMarks] = useState(0);
   const [percentage, setPercentage] = useState(0);
-
+  const myName = "Ali Haider";
+  const companyInfo = {
+    name: "P2PClouds",
+    address: "Arfa Tower Lahore",
+    contact: "info@p2pclouds.net",
+  };
   const handleObtMarksChange = (e) => {
     setObtMarks(e.target.value);
   };
@@ -15,8 +25,17 @@ function App() {
     const percentage = (obtMarks / totalMarks) * 100;
     setPercentage(percentage);
   };
+
+
+
+
   return (
-    <div>
+
+
+    <div className="colorful-background">
+      <Header myName={myName} />
+      <CalulatorBMI />
+      <MyNavbar />
       <form onSubmit={calculatePercentage}>
         <input
           type="number"
@@ -36,7 +55,15 @@ function App() {
         <div>Your percentage is {percentage}%</div>
 
       </form>
+      <Footer companyInfo={companyInfo} />
+      <LoginForm />
+
+
+
+
+
     </div>
+
   );
 }
 

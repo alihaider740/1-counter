@@ -1,0 +1,8 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+/* App.css */
+.colorful-background {
+    background-color: blue;
+    /* Alice Blue */
+    padding: 15px;
+    border-radius: 5px;
+}
